@@ -12,6 +12,7 @@ public class ContactInfo {
 	int PhoneNum;
 	String Email;
 	
+	//Constructor
 	public ContactInfo(String fn,String ls,String a,String c,String s,int z,int pn,String e) {
 		
 		this .FirstName=fn;

@@ -153,19 +153,74 @@ public class AddressBook {
 		}
 		
 	}
+	//Adding multiple contacts Feture
+	
+	public void MultiplePerson() {
+		System.out.print("Enter How Many Contacts Want Add ");
+		int UserWant = Z.nextInt();
+		for(int i =0;i<=UserWant;i++) {
+			addcontact();
+		}
+	}
+	
+	
 
 	/*Main Method*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("---------WELLCOME TO ADDRESSBOOK PROBLEM---------");
 	AddressBook obj = new AddressBook();
-	obj.addcontact();
-	obj.addcontact();
-	obj.Displaycontact();
-	obj.EditContact();
-	obj.Deletecontact();
-	obj.Displaycontact();
+	System.out.print("Choose One Option to Perfome On Address Book (1)ENTER OR (2)EXIT:");
+	int Choose = Z.nextInt();
+	
+	if(Choose==1) {
+		while(Choose !=2) {
+			System.out.println("--------CHOOSE BELOW OPTION TO PERFOME ON ADDRESBOOK--------");
+			
+			System.out.println("1.AddContact");
+			System.out.println("2.DeleteContact");
+			System.out.println("3.EditContact");
+			System.out.println("4.Display AddressBook");
+			System.out.println("5.Exit from the AddressBook");
+		
+			System.out.print("Choose Your Option:");
+			
+			int Choice= Z.nextInt();
+			switch(Choice) {
+			
+			case 1 :
+				obj.MultiplePerson();
+				break;
+			case 2 :
+				obj.Deletecontact();
+				break;
+			case 3:
+				obj.addcontact();
+				break;
+			case 4 :
+				obj.Displaycontact();
+				break;
+				
+			default :
+				System.out.println("Enter Valid Choice :");
+			}
+			if (Choice == 5) {
+				System.out.println("Successfully exited from the Address Book Application.");
+				break;
+			}
+		}
+	} else if (Choose == 2) {
+		System.out.println("Successfully exited from the Address Book Application.");
+	} else {
+		System.out.println("Choose Valid option [1.Enter (or) 2.Exit]...");
+		
+		}	
+		
+		
+	}
+	
+	
 	}
 	
 
-}
+

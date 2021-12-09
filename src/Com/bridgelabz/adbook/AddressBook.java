@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class AddressBook {
 	//Input the Contact Information
-	 Scanner Z = new Scanner(System.in);
+	 static Scanner Z = new Scanner(System.in);
 	
-	 ArrayList<ContactInfo> contactbook = new ArrayList<>();
+	static  ArrayList<ContactInfo> contactbook = new ArrayList<>();
 	//Creting addcontact method
 	public void addcontact() {
 		System.out.print("Enter FirstName: ");
@@ -134,6 +134,25 @@ public class AddressBook {
 		}
 	}
 	
+	//Delete contact Feture 
+	public void Deletecontact() {
+		System.out.print("Enter The Contact FirstName to DeleteContact");
+		String delete = Z.next();
+		
+		for(int i =0;i<contactbook.size(); i++) {
+			String  FindingFirstName = contactbook.get(i).getFirstName();
+			
+			if(delete.equals(FindingFirstName)) {
+				contactbook.remove(i);
+				System.out.println("\n Selected Contact Deleted Succsessfully");
+				break;
+			
+			}else {
+				continue;
+			}
+		}
+		
+	}
 
 	/*Main Method*/
 	public static void main(String[] args) {
@@ -144,6 +163,7 @@ public class AddressBook {
 	obj.addcontact();
 	obj.Displaycontact();
 	obj.EditContact();
+	obj.Deletecontact();
 	obj.Displaycontact();
 	}
 	

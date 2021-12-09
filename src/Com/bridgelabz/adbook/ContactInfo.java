@@ -26,7 +26,7 @@ public class ContactInfo {
 		
 	}
 	
-	/**Initiating Getter and Setter Me  thod**/
+	/**Initiating Getter and Setter Method**/
 	
 	public String getFirstName() {
 		return FirstName;
@@ -125,7 +125,15 @@ public class ContactInfo {
 	//override Method
 	@Override
 	public String toString() {
-		return String.format(FirstName + " " +LastName + " " +Address +" " +City + " " +State + "" + ZipCode + " " +PhoneNum + " " +Email + " ");
+	return String.format("FirstName: " + getFirstName() +"\n"
+						+ "LastName: " + getLastName() +"\n"
+						+ "Address: " +getAddress() +"\n"
+						+ "City: " + getCity() +"\n"
+						+ "State: " + getState() +"\n"
+						+ "ZipCode: " +getZipCode() +"\n"
+						+ "PhoneNum: " +getPhoneNum() +"\n"
+						+ "Email: " +getEmail() +"\n");
+			
 	}
 		
 	}

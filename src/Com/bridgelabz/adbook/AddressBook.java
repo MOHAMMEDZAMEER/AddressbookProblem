@@ -297,10 +297,16 @@ public class AddressBook {
 				obj.Displaycontact();
 				break;
 				
+			case 6:
+				obj.searchPersonByCity():
+				break;
+			case 7:
+				obj.searchPersonByState();
+				break;
 			default :
 				System.out.println("Enter Valid Choice :");
 			}
-			if (Choice == 6) {
+			if (Choice == 8) {
 				System.out.println("Successfully exited from the Address Book Application.");
 				break;
 			}

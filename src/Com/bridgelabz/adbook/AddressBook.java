@@ -344,11 +344,23 @@ public class AddressBook {
 			case 5 :
 				obj.Displaycontact();
 				break;
-				
+
+			case 6:
+				obj.searchPersonByCity();
+				break;
+			case 7:
+				obj.searchPersonByState();
+				break;
+			case 8:
+				obj.countByCity();
+				break;
+			case 9:
+				obj.countByState();
+				break;
 			default :
 				System.out.println("Enter Valid Choice :");
 			}
-			if (Choice == 6) {
+			if (Choice == 10) {
 				System.out.println("Successfully exited from the Address Book Application.");
 				break;
 			}

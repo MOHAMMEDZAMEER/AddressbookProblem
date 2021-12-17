@@ -153,7 +153,7 @@ public class AddressBook {
 		}
 		
 	}
-	//Adding multiple contacts Feture
+	//Adding multiple Person contacts Feture
 	
 	public void MultiplePerson() {
 		System.out.print("Enter How Many Contacts Want Add ");
@@ -163,8 +163,45 @@ public class AddressBook {
 		}
 	}
 	
+	//Uc:6 Ability to add Multiple Addressbook to System
+	public void NewAddressBook() {
+		System.out.print("Enter AddressBook Name :");
+		String userInputBookName = Z.next();
 	
-
+		if(!CheckUnique(userInputBookName)) {
+			System.out.println("you alredy have This Name AddressBook");
+			return;
+		}
+	
+		AddressBookList addressBookList = new AddressBookList(userInputBookName);
+		addressBookList.add(addressBookList);
+		
+		System.out.println("New AddressBook is Added To List");
+	}
+		
+	//Checking Unique AddressBook
+	private boolean CheckUnique(String userInputBookName) {
+		// TODO Auto-generated method stub
+		if(AddressBookList.isEmpty1()) {
+		return true;
+	}
+		for(int i = 0; i < AddressBookList.size; i++) {
+			String getName = AddressBookList.get(i).UserInputBookName;
+			if(getName.equals(userInputBookName)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	// display address book
+		public void displayAddressBook(AddressBookList[] AddressBookList) {
+			for (AddressBookList addressBook : AddressBookList) {
+				System.out.println(addressBook);
+			}
+		}
+		
+		
 	/*Main Method*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -180,8 +217,9 @@ public class AddressBook {
 			System.out.println("1.AddContact");
 			System.out.println("2.DeleteContact");
 			System.out.println("3.EditContact");
-			System.out.println("4.Display AddressBook");
-			System.out.println("5.Exit from the AddressBook");
+			System.out.println("4.Add new AdressBook");
+			System.out.println("5.Display AddressBook");
+			System.out.println("6.Exit from the AddressBook");
 		
 			System.out.print("Choose Your Option:");
 			
@@ -197,14 +235,17 @@ public class AddressBook {
 			case 3:
 				obj.addcontact();
 				break;
-			case 4 :
+			case 4:
+				obj.NewAddressBook();
+				break;
+			case 5 :
 				obj.Displaycontact();
 				break;
 				
 			default :
 				System.out.println("Enter Valid Choice :");
 			}
-			if (Choice == 5) {
+			if (Choice == 6) {
 				System.out.println("Successfully exited from the Address Book Application.");
 				break;
 			}
@@ -222,5 +263,3 @@ public class AddressBook {
 	
 	}
 	
-
-

@@ -34,24 +34,14 @@ public class AddressBookList {
 		return false;
 	}
 
-	public static void add1(AddressBookList addressBookObj) {
+	public static Object get(int i) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 	public void add(AddressBookList addressBookList) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	public static boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public static Object get(int i) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
+	private static final AddressBookList[] AddressBook = null;
+
 	//Input the Contact Information
 	 static Scanner Z = new Scanner(System.in);
 	
@@ -47,6 +49,24 @@ public class AddressBook {
 		}
 	}
 	
+	public boolean duplicateCheck(String enter , String first) {
+		for (AddressBookList addressBook : AddressBook) {
+			if (enter.equals(addressBook.UserInputBookName)) {
+				for (ContactInfo person : addressBook.Contact) {
+					if (first.equals(person.FirstName)) {
+						return false;
+					}
+					else {
+						continue;
+					}
+				}
+			}
+			else {
+				continue;
+			}
+		}
+		return true;
+	}
 	//Edit Contact Feature
 	public void EditContact() {
 		System.out.println("/n Enter FirstName to EditContactInfo");

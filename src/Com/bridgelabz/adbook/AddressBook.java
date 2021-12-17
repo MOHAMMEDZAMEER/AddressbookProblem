@@ -322,7 +322,11 @@ public class AddressBook {
 			System.out.println("3.EditContact");
 			System.out.println("4.Add new AdressBook");
 			System.out.println("5.Display AddressBook");
-			System.out.println("6.Exit from the AddressBook");
+			System.out.println("6.Search person by City");
+			System.out.println("7.Search person by State.");
+			System.out.println("8.Count By City.");
+			System.out.println("9.count By State.");
+			System.out.println("10.Exit from the Application.");
 		
 			System.out.print("Choose Your Option:");
 			

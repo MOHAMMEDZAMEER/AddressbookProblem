@@ -1,6 +1,9 @@
 package Com.bridgelabz.adbook;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Enumeration;
+import java.util.Hashtable;
 import java.util.Scanner;
 
 public class AddressBook {
@@ -221,40 +224,56 @@ public class AddressBook {
 			}
 		}
 		/**
-		 * UC-8:- Ability to search Person in a City or State across the multiple
-		 * AddressBook.
+		 * UC-9:- Ability to view Persons by City or State - Maintain Dictionary of City
+		 * and Person as well as State and Person.
 		 **/
 		public void searchPersonByCity() {
 			
 			System.out.print("\nEnter city to search person by city name :- ");
 			String searchCity = Z.next();
 			
+			/***** Creating dictionary of city(keys) and name(values) *****/
+			Dictionary cityWiseDict = new Hashtable();
+
 			for (AddressBookList addressBook : AddressBook) {
 				for (ContactInfo person : addressBook.Contact) {
 					if (searchCity.equals(person.City)) {
-						System.out.println("Persons who are in same city " + "(" + searchCity + ") :- " + person.FirstName);
+						cityWiseDict.put(person.FirstName, searchCity);
 					} else {
 						continue;
 					}
 				}
 			}
+			System.out.println("Persons who are in same city " + searchCity + " :- ");
+			for(Enumeration i = cityWiseDict.keys(); i.hasMoreElements();) {
+				System.out.println(i.nextElement());
+			}
+			System.out.println(" ");
 		}
 		
 		public void searchPersonByState() {
-			
-			System.out.print("\nEnter State to search person by city name :- ");
+			System.out.print("\nEnter state to search person by State name :- ");
 			String searchState = Z.next();
 			
+			/***** Creating dictionary of city(keys) and name(values) *****/
+			Dictionary stateWiseDict = new Hashtable();
+
 			for (AddressBookList addressBook : AddressBook) {
 				for (ContactInfo person : addressBook.Contact) {
 					if (searchState.equals(person.State)) {
-						System.out.println("Persons who are in same state " + "(" + searchState + ") :- " + person.FirstName);
+						stateWiseDict.put(person.FirstName, searchState);
 					} else {
 						continue;
 					}
 				}
 			}
+			System.out.println("Persons who are in same state " + searchState + " :- ");
+			for(Enumeration i = stateWiseDict.keys(); i.hasMoreElements();) {
+				System.out.println(i.nextElement());
+			}
+			System.out.println(" ");
 		}
+		
 		
 		
 	/*Main Method*/
